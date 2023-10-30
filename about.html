@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css" />
+      </head>
+<body>
+    <!-- navbar here-->
+    <nav
+      id="shine-div"
+      class="shadow-lg opacity-90 sticky text-white top-0 w-full" 
+    style="z-index: 2;"
+    >
+      <div class="flex justify-between rounded px-8 py-4 items-center">
+        <!-- logo -->
+        <a href="index.html" class="flex"
+          ><img src="assets/logo-removebg-preview.png" class="w-14" />
+          <p class="ml-2 font-bold mt-3 text-2xl">Ferniture</p></a
+        >
+        <!-- Primary Navigation and dropdown menu within a wrapper-->
+        <div id="wrapperfornav" class="flex justify-between">
+          <div id="cart" class="mx-2" style="cursor: pointer;" onclick="window.location.href='cart.html'">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+            </svg>
+            <small>Cart (<span id="cart-count">0</span>)</small>
+          </div>
+          <!-- Responsive dropdown menu -->
+          <div id="dropdownmenu" style="cursor: pointer;"  onclick="showSidebar()" >
+            <!-- This is the sidebar toggler -->
+            <svg
+              onhover=""
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- sidebar here -->
+    <aside
+      id="sidebar"
+      class=" h-auto fixed top-20 right-0  closebar " 
+      
+      style="z-index: 1; opacity: 90%;"
+    >
+    <a href="index.html " class="flex rounded border-2 border-black p-4 justify-center" style="background-color: var(--primary); overflow: hidden;">
+      <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+        <path d="M19.006 3.705a.75.75 0 00-.512-1.41L6 6.838V3a.75.75 0 00-.75-.75h-1.5A.75.75 0 003 3v4.93l-1.006.365a.75.75 0 00.512 1.41l16.5-6z" />
+        <path fill-rule="evenodd" d="M3.019 11.115L18 5.667V9.09l4.006 1.456a.75.75 0 11-.512 1.41l-.494-.18v8.475h.75a.75.75 0 010 1.5H2.25a.75.75 0 010-1.5H3v-9.129l.019-.006zM18 20.25v-9.565l1.5.545v9.02H18zm-9-6a.75.75 0 00-.75.75v4.5c0 .414.336.75.75.75h3a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75H9z" clip-rule="evenodd" />
+      </svg>
+      </div>
+      <div>
+      <p class="ml-3">HOME</p>
+      </div>
+    </a>
+    <a href="products.html " class="flex rounded border-2 mt-1  border-black p-4 justify-center" style="background-color: var(--primary); overflow: hidden;">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path d="M5.223 2.25c-.497 0-.974.198-1.325.55l-1.3 1.298A3.75 3.75 0 007.5 9.75c.627.47 1.406.75 2.25.75.844 0 1.624-.28 2.25-.75.626.47 1.406.75 2.25.75.844 0 1.623-.28 2.25-.75a3.75 3.75 0 004.902-5.652l-1.3-1.299a1.875 1.875 0 00-1.325-.549H5.223z" />
+          <path fill-rule="evenodd" d="M3 20.25v-8.755c1.42.674 3.08.673 4.5 0A5.234 5.234 0 009.75 12c.804 0 1.568-.182 2.25-.506a5.234 5.234 0 002.25.506c.804 0 1.567-.182 2.25-.506 1.42.674 3.08.675 4.5.001v8.755h.75a.75.75 0 010 1.5H2.25a.75.75 0 010-1.5H3zm3-6a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v3a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75v-3zm8.25-.75a.75.75 0 00-.75.75v5.25c0 .414.336.75.75.75h3a.75.75 0 00.75-.75v-5.25a.75.75 0 00-.75-.75h-3z" clip-rule="evenodd" />
+        </svg>
+        
+      </div>
+      <div>
+      <p class="ml-3">BROWSE PRODUCTS</p>
+      </div>
+    </a>
+    <a href="about.html " class="flex rounded border-2 mt-1  border-black p-4 justify-center" style="background-color: var(--primary); overflow: hidden;">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 01-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 01-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 01-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584zM12 18a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" />
+        </svg>
+        
+        
+      </div>
+      <div>
+      <p class="ml-3">ABOUT US</p>
+      </div>
+    </a>
+    <a id="logInbutton" onclick="logIn()" class="flex rounded border-2  mt-1 border-black p-4 justify-center" style="background-color: var(--primary); overflow: hidden; cursor: pointer;" hidden>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
+        </svg>
+        
+        
+        
+      </div>
+      <div>
+      <p class="ml-3">LOGIN</p>
+      </div>
+    </a>
+    <a  id="logOutbutton"  class="flex rounded border-2  mt-1 border-black p-4 justify-center" style="background-color: var(--primary); overflow: hidden; cursor: pointer;" onclick="logOut()" >
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
+        </svg>
+        
+        
+        
+      </div>
+      <div>
+      <p class="ml-3">LOGOUT</p>
+      </div>
+    </a>
+    <a  id="addProductbutton" href="addproduct.html " class="flex rounded border-2  mt-1 border-black p-4 justify-center" style="background-color: var(--primary); overflow: hidden;" >
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z" clip-rule="evenodd" />
+        </svg>
+        
+        
+        
+      </div>
+      <div>
+      <p class="ml-3">ADD PRODUCT</p>
+      </div>
+    </a>
+    <a  id="listProductbutton" href="listproduct.html " class="flex rounded border-2  mt-1 border-black p-4 justify-center" style="background-color: var(--primary); overflow: hidden; " >
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M2.625 6.75a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zm4.875 0A.75.75 0 018.25 6h12a.75.75 0 010 1.5h-12a.75.75 0 01-.75-.75zM2.625 12a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zM7.5 12a.75.75 0 01.75-.75h12a.75.75 0 010 1.5h-12A.75.75 0 017.5 12zm-4.875 5.25a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zm4.875 0a.75.75 0 01.75-.75h12a.75.75 0 010 1.5h-12a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+        </svg>
+        
+        
+        
+        
+      </div>
+      <div>
+      <p class="ml-3">LIST OF PRODUCTS</p>
+      </div>
+    </a>
+    
+    
+    </aside>
+
+    <!-- Login modal here -->
+    
+    <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="loginModal" hidden>
+      <form id="loginForm">
+     
+      <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+    
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+         
+          <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                  </svg>
+                  
+                </div>
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                  <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title"><button type="button" class="ml-2 border border-gray-300 rounded-md bg-green-100 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="modal-close" onclick="document.getElementById('registerModal').hidden=true; document.getElementById('loginModal').hidden=false">Login </button><button type="button" class="ml-2 border border-gray-300 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="modal-close" onclick="document.getElementById('registerModal').hidden=false; document.getElementById('loginModal').hidden=true" >Register</button></h3>
+                  <div class="mt-2 flex p-3">
+                    <label for = "loginusername" class="block text-sm font-medium text-gray-700 mr-2">Username:</label>
+                    <input id ="loginusername" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 h-4" required></input>
+                    <label for = "loginpassword" class="block text-sm font-medium text-gray-700 mx-2">Password: </label>
+                    <input id="loginpassword" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 h-4"required></input>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+              <button type="button" class="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto" id="loginbutton" type ="submit" onclick="loguser(event)">Login</button>
+              <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto" id="modal-close" onclick="document.getElementById('loginModal').hidden=true">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+    <!-- Register modal here -->
+    <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="registerModal" hidden>
+      <form id="registerForm">
+     
+      <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+    
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+         
+          <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                  </svg>
+                  
+                </div>
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                  <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title"><button type="button" class="ml-2 border border-gray-300 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="modal-close" onclick="document.getElementById('registerModal').hidden=true; document.getElementById('loginModal').hidden=false">Login </button><button type="button" class="ml-2 border border-gray-300 rounded-md bg-green-100 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-green-50" id="modal-close" onclick="document.getElementById('registerModal').hidden=false; document.getElementById('loginModal').hidden=true" >Register</button></h3>
+                  <div class="mt-2 flex p-3">
+                    <div>
+                    <label for = "registerusername" class="block text-sm font-medium text-gray-700 mr-2">Username:</label>
+                    <input id ="registerusername" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 h-4" required></input>
+                    <label for = "registerpassword" class="block text-sm font-medium text-gray-700 mx-2">Password: </label>
+                    <input id="registerpassword" type="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 h-4"required></input>
+                    <input type="checkbox" name="admin" id="admincheck">Admin</input>
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+              <button type="button" class="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto" id="loginbutton" type ="submit" onclick="registerUser(event)">Login</button>
+              <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto" id="modal-close" onclick="document.getElementById('loginModal').hidden=true">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+      <!-- Empty div for protecting content from header -->
+      <div class="h-20"></div>
+      <h1 class="text-4xl font-bold text-center">About us</h1>
+      <p class="text-center">This is a simple online store for selling products.</p>
+      <div class="p-3">
+        <div class="mx-auto w-1/2 text-start" id="fadein">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra accumsan in nisl nisi. Lacus viverra vitae congue eu consequat ac felis. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Purus sit amet volutpat consequat mauris nunc congue. Nulla aliquet enim tortor at auctor urna nunc id cursus. Erat nam at lectus urna duis convallis. Lectus urna duis convallis convallis. Non sodales neque sodales ut. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus.
+
+Massa id neque aliquam vestibulum morbi blandit. Neque aliquam vestibulum morbi blandit cursus risus at. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Eget felis eget nunc lobortis mattis aliquam faucibus. Dictumst quisque sagittis purus sit amet volutpat consequat mauris. Consequat semper viverra nam libero justo laoreet sit amet cursus. Arcu cursus vitae congue mauris rhoncus aenean vel elit. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Orci nulla pellentesque dignissim enim. Justo nec ultrices dui sapien eget. Integer feugiat scelerisque varius morbi enim. Lobortis feugiat vivamus at augue eget. Vulputate eu scelerisque felis imperdiet proin.
+
+Orci a scelerisque purus semper. Vitae congue mauris rhoncus aenean vel elit scelerisque. Venenatis cras sed felis eget. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Elementum nibh tellus molestie nunc non blandit. Suscipit adipiscing bibendum est ultricies integer quis auctor. Lorem ipsum dolor sit amet. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Felis donec et odio pellentesque diam volutpat. Eget est lorem ipsum dolor sit amet consectetur adipiscing elit.
+        </div>
+        <div>
+          <img src="assets/aboutus.jpg.jpg" alt="Ferniture" class="mx-auto w-1/2 mt-20" id="fadein2">
+        </div>
+      </div>
+      <div class="h-48 mt-20 text-center p-2" style="background-color: var(--accent);">
+        <p class="small">Copyright &copy; 2022</p>
+        <p class="small">All rights reserved</p>
+        <p class="small">Made with <span class="font-bold">love</span></p>
+        </div>
+    
+    <script src="header.js"></script>
+
+</body>
+</html>
